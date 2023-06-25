@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Home Page</title>
+	<style>
+		body{
+			background-image: url('https://media.gq.com/photos/591dbfa112d584582eeaa5ab/1:1/w_650,h_650,c_limit/gq-perfect-damn-salad.gif');/*niye bunu qoydum bilmirem!*/
+			background-color: #ffd56f;
+			background-repeat: no-repeat;
+			background-size: auto;
+		}
+		input{
+			border: 1px solid burlywood;
+			border-radius: 5px;
+			border-width: 2px;
+			margin: 2px;
+			padding: 8px;
+			font-family: Cascadia Code;
+		}
+		button{
+			background-color: wheat;
+			padding: 10px;
+			border-radius: 10px;
+			font-family: Cascadia Code;
+		}
+		div{
+			margin: 15%;
+			margin-left: 42%;
+		}
+	</style>
+
+</head>
+<body>
+	<div>
+		<h1 style="font-family: Cascadia Code;">Login Page</h1>
+		<input type="text" id="u_name" placeholder="enter your username"><br>
+		<input type="password" id="u_pass" placeholder="enter your password"><br><br>
+
+		<button type="button" onclick="login()">Login</button>
+	</div>
+	<script>
+		function login(){
+			var username=document.getElementById('u_name').value;
+			var userpass=document.getElementById('u_pass').value;
+
+			if(username=="Aliko" && userpass=="12345"){
+				document.write("Welcome!");
+			}else{
+				document.write("Error! \n Wrong password or username!");
+			}
+
+		}
+	</script>
+
+</body>
+</html>
