@@ -1,0 +1,50 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Video-Game-Controller-Icon.svg/2048px-Video-Game-Controller-Icon.svg.png"/>
+    <style type="text/css">
+      .container-fluid{
+        font-family: Cascadia Code;
+      }
+    </style>
+    <title>GAMESBLOG</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand fs-3" href="{% url 'home' %}" style="margin-right: 25px;">GamesBlog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active fs-4" aria-current="page" href="{% url 'home' %}" style="margin-right: 10px;">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4" href="{% url 'categories' %}" style="margin-right: 10px;">Games</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link fs-4" href="#">About</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light fs-4" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+    <div id="demo" style="margin:18px;">{% block content %}{% endblock %}</div>
+
+
+</body>
+</html>

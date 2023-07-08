@@ -1,0 +1,18 @@
+{% extends "games/main.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div id="container">
+    {% for blog in blogs %}
+        <div class="card" style="width: 18rem; margin: 45px; display: inline-grid;">
+            <img src="{% static 'blog/img/images/'|add:blog.images %}" class="card-img-top" alt="CODMW2"><div class="card-body">
+            <h5 class="card-title">{{ blog.title }}</h5>
+            <p class="card-text">{{ blog.description }}</p>
+            <a href="#" class="btn btn-danger">Look details!</a>
+          </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
