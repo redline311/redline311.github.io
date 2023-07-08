@@ -1,0 +1,30 @@
+name: Deploy to Github Pages
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Python sürümünüzü belirtin
+
+      - name: Install Dependencies
+        run: pip install django
+
+      - name: Build and Deploy
+        run: |
+          python manage.py collectstatic --noinput
+          touch .nojekyll
+          mv static/* .
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
